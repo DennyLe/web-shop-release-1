@@ -1,0 +1,96 @@
+@charset 'utf-8';
+@import 'variables';
+@import 'mixins';
+header {
+    height: $header-height;
+    border-bottom: 2px solid $border-col;
+    width: $header-width;
+    margin: 20px auto 20px auto;
+    background-color: $bg-col;
+}
+
+.firstLine {
+    height: 100px;
+    border-bottom: 2px solid $border-col;
+}
+
+.search-form {
+    @include form-tool(300px, 50px, 30px, 17px, 30px)
+}
+
+.search-str {
+    @include input-tool();
+    @include show-icon(135px, 30px, -310px);
+    background-repeat: no-repeat;
+}
+
+.search-btn {
+    @include submit-btn-tool(95px, 44px, 25px);
+    background-color: $border-col;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background-color: darken($color: $border-col, $amount: 10%);
+    }
+}
+
+.logo {
+    @include show-icon(40px, 40px, -370px);
+    margin: 33px 0 0 350px;
+}
+
+.first_line_refs {
+    margin: 33px 0 0 980px;
+}
+
+.button {
+    float: left;
+    color: $link-col;
+    @include text-style-mixin(medium);
+    height: 40px;
+    margin: 33px 0 0 40px;
+}
+
+.favorite_icon {
+    @include show-icon(30px, 30px, -250px);
+}
+
+.firstline_lable {
+    padding: 5px 0 0 5px;
+    float: left;
+}
+
+.compare_icon {
+    @include show-icon(30px, 30px, -190px);
+}
+
+.cart_icon {
+    @include show-icon(30px, 30px, -160px);
+}
+
+.user_icon {
+    @include show-icon(40px, 40px, 0);
+    margin-top: -6px;
+}
+
+.nav-ul {
+    width: 850px;
+    margin: 0 auto;
+    padding: 10px 0 5px 0;
+    text-align: center;
+}
+
+.nav-li {
+    display: inline;
+    margin-right: 40px;
+}
+
+.header-menu-link {
+    color: $link-col;
+    @include text-style-mixin(bold);
+    margin: 0 auto;
+    &:hover {
+        color: $link-hover-col;
+    }
+}

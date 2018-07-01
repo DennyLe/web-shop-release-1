@@ -1,0 +1,101 @@
+@charset 'utf-8';
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a.prev,
+a.next {
+    height: 60px;
+    position: absolute;
+    width: 60px;
+    top: 50%;
+    margin-top: -30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    opacity: 0.6;
+    text-indent: -99999px;
+    cursor: pointer;
+    transition: opacity 200ms ease-out;
+}
+
+a.prev:hover,
+a.next:hover {
+    opacity: 1;
+}
+
+.prev {
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url('./../img/sprite/sprite.png');
+    background-position: 0 -40px;
+}
+
+.next {
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url('./../img/sprite/sprite.png');
+    background-position: 0 -100px;
+}
+
+.slider {
+    height: 330px;
+    // position: relative;
+    width: 1100px;
+    margin: 25px auto 20px auto;
+}
+
+.slide {
+    position: absolute;
+    height: 330px;
+    width: 1110px;
+}
+
+.slider .slide:target {
+    z-index: 100;
+}
+
+// img {
+//     width: 1110px;
+//     position: absolute;
+//     left: 0;
+// }
+.large-badge {
+    @include slider-tool(22%,
+    500px,
+    90px,
+    30px,
+    $bg-col,
+    bold);
+    font-size: $fz - 5;
+    border: 1px solid $large-badge-col;
+    border-radius: 20px;
+    background-color: $large-badge-col;
+    text-decoration: none;
+    &:hover {
+        background-color: $large-badge-col - 30;
+        border: $large-badge-col - 30;
+    }
+}
+
+.best-place {
+    @include slider-tool(50%,
+    355px,
+    390px,
+    30px,
+    $bg-col,
+    bold)
+}
+
+.final-frontier {
+    @include slider-tool(80%,
+    450px,
+    210px,
+    25px,
+    $bg-col,
+    normal);
+    opacity: .7;
+}
